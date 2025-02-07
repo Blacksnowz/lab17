@@ -4,25 +4,25 @@
 #include<vector>
 using namespace std;
 
-______________ randomVector(unsigned int N){	
+vector<int> randomVector(unsigned int N) {	
     vector<int> v;
-    for(unsigned int i = 0; i < N; i++) v.______________(rand()%10);
-    ______________;
+    for (unsigned int i = 0; i < N; i++) v.push_back(rand() % 10);
+    return v;
 }
 
-______________ showVector(______________){
-	cout << "[";
-	for(unsigned int i = 0; _____________________; i++){
-		cout << _________________;
-		if(_________________) cout << "]";
-		else cout << " ";
-	}
+void showVector(const vector<int>& vec) {
+    cout << "[";
+    for (unsigned int i = 0; i < vec.size(); i++) {
+        cout << vec[i];
+        if (i == vec.size() - 1) cout << "]";
+        else cout << " ";
+    }
 }
 
-_________________ dotProduct(_____________________________){
-	int sum = 0;
-	for(unsigned int i = 0; _____________________; i++) sum += _________________;	
-	_________________;
+int dotProduct(const vector<int>& A, const vector<int>& B) {
+    int sum = 0;
+    for (unsigned int i = 0; i < A.size(); i++) sum += A[i] * B[i];	
+    return sum;
 }
 
 int main(){
@@ -37,3 +37,9 @@ int main(){
 	
 	return 0;
 }
+
+
+
+
+
+
